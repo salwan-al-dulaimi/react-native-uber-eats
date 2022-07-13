@@ -1,15 +1,22 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import Home from "./screens/Home";
+import Screen from "./components/Screen";
+import HeaderTabs from "./components/HeaderTabs";
+import SearchBar from "./components/SearchBar";
+import Categories from "./components/Categories";
+import RestaurantItem from "./components/RestaurantItem";
 
 export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Universal React with Expo</Text>
-    </View>
+    <Screen style={{ backgroundColor: "#eee", flex: 1 }}>
+      <View style={{ backgroundColor: "white", padding: 15 }}>
+        <HeaderTabs />
+        <SearchBar />
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Categories />
+        <RestaurantItem />
+      </ScrollView>
+    </Screen>
   );
 }
