@@ -39,7 +39,7 @@ export default function RestaurantItems() {
         <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }}>
             {localRestaurants.map((restaurant, inddex) => (
 
-                <View style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}>
+                <View key={inddex} style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}>
                     {/* Restaurant Image */}
                     <RestaurantImage info={restaurant} />
                     {/* Restaurant Info */}
